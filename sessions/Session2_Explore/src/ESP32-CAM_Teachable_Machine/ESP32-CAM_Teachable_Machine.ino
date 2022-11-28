@@ -7,8 +7,8 @@ https://www.facebook.com/francefu
 */
 
 //"Enter your WIFI credentials"
-const char* ssid     = "KISD-WLAN-LOL";   //"your network SSID"
-const char* password = "WLANderKISD-WAP";   //"your network password"
+const char* ssid     = "WIFI-NAME";   //"your network SSID"
+const char* password = "WIFI-PASS";   //"your network password"
 
 #include <WiFi.h>
 #include <esp32-hal-ledc.h>      //"For the control of servo motors"
