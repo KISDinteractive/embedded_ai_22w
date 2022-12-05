@@ -32,7 +32,7 @@ This is intended to give an overview of the subject and cannot reflect the entir
 
 ## Turing Machine
 
-- Theoretical concept of the modern computer by the mathematican Alan Turing.
+- Theoretical concept of the modern computer by the mathematician Alan Turing.
 - Foundation of the research field of computer science. 
 - Also see ["Interactive Systems [Fundamentals]"](https://github.com/KISDinteractive/fundamentals22w) for details.
 
@@ -54,7 +54,7 @@ This is intended to give an overview of the subject and cannot reflect the entir
 - in 1956: Dartmouth Conference (Dartmouth Summer Research Project on Artificial Intelligence)
 - Leading Computer Scientists, Mathematicians and Linguists met to conduct a **8 week research project** on **solving tasks with computers**.
 - Founded term: **Artificial Intelligence**
-- Later they said, theye were not hapy with the term, but needed a name to distinguish "AI" from the concept of cybernetics...
+- Later they said, they were not happy with the term, but needed a name to distinguish "AI" from the concept of cybernetics...
 - "The study is to proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it."
 - **A lot of big Words, terms got defined, goals got set, "AI" was founded as research discipline.**
 - (Of Course) **no big breakthroughs**
@@ -68,7 +68,7 @@ This is intended to give an overview of the subject and cannot reflect the entir
 - Even General Purpose Robots have been discussed
 - Many different methods of AI at the same time
   - Predominant was the **Symbolic** AI paradigm: just enter all the logics and conditions needed to solve problem
-  - Only some research on **Subsymbolic AI** (non-human-readable). Inspired by the brain; build out of neurons that make up an absract network.
+  - Only some research on **Subsymbolic AI** (non-human-readable). Inspired by the brain; build out of neurons that make up an abstract network.
 - Some stated: human intelligence in 3-8 years
 - Big expectations, but mid 1960s nothing of the promised was there.
 - **Funding was cancelled. AI Winter began**
@@ -85,7 +85,7 @@ See [video of "Eliza"](https://youtu.be/GmU7SimFkpU?t=105), a chatbot that was a
 
 - Again: **huge interests, funding, hype**
 
-- This time solving **pratical matters** was in the foreground
+- This time solving **practical matters** was in the foreground
 
 - main topic: **domain-specific expert systems** (see below)
 
@@ -103,33 +103,43 @@ See [video of "Eliza"](https://youtu.be/GmU7SimFkpU?t=105), a chatbot that was a
 
 ## Deep Blue vs. Kasparov
 
-For quite a long time it got quiet aorund the AI scene. In 1997 the big shock: a computer program wins a chess game against the world champion Garry Kasparov. A game that has been seen as a thing that computers can't do/win due to their lack of creativity.
+For quite a long time it got quiet around the AI scene. In 1997 the big shock: a computer program wins a chess game against the world champion Garry Kasparov. A game that has been seen as a thing that computers can't do/win due to their lack of creativity.
 
-See [raw footage of Kasparov](https://www.youtube.com/watch?v=aNpv3LfCUa4) obviously having difficulty to believe that he just looses against an AI system.
+See [raw footage of Kasparov](https://www.youtube.com/watch?v=aNpv3LfCUa4) obviously having difficulty to believe that he just loses against an AI system.
 
 # 3.2 Install Dependencies
 
 We then installed a few components and apps that we will work with over the following sessions:
 
-- VS Code
-- VS Code Extensions:
-  - Name: **Python**
-    Id: ms-python.python
-    Publisher: Microsoft
-    [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  - Name: **Jupyter**
-    Id: ms-toolsai.jupyter
-    Publisher: Microsoft
-    [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- Python 
-  - In the Python Command prompt:
-    - `pip install jupyterlab`
-    - `pip install matplotlib`
-    - `pip install pandas`
+- **Python**: download from https://www.python.org/downloads/ (for windows choose the “installer”) and run the installer. **Note:** make sure the checkbox with "Add Python X.X to PATH" at the beginning of the installer is checked! If you missed that step and the check if python is installed (next section) fails, see ma post in spaces.
+- **Arduino**: Download and run installer: https://www.arduino.cc/en/software 
+- **Visual Studio Code** (not Visual Studio!): Download from [https://code.visualstudio.com](https://code.visualstudio.com/) and run installer
+  (OR VSCodium from [https://vscodium.com](https://vscodium.com/) which is 100% Open Source and should work just as good)
+  - install Extensions in VS Code :
+    - Name: **Python**
+      Id: ms-python.python
+      Publisher: Microsoft
+      [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - Name: **Jupyter**
+      Id: ms-toolsai.jupyter
+      Publisher: Microsoft
+      [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
+## Check if Python is installed locally
 
+- Open a command-line interface.
+  - **Mac:** open App "Terminal"
+  - **Win:** open App "CMD", sometimes called "Command Line Prompt"
+- Type `python --version` in the command line and hit the "Enter" key. 
+- In case you see `Python` and some Version number like `3.11.0` you know now tht python was successfully installed.
 
-## 3.3 Recap Python in Jupyter
+## Access to Jupyter on the Server Cluster
+
+For the time of the course the participants also got access (user name and password) to the server cluster of the research project on jupyter.kitegg.de.
+
+For learning Jupyter and doing some basic stuff we can chose the "No GPU" option at the startup which saves a lot of energy!
+
+## 3.3 Recap Python in Jupyter (in VSCode)
 
 We then got to know the Jupyter user interface step by step. This is a overview of the most important elements and shortcuts:
 
