@@ -26,6 +26,7 @@ conda activate /home/jovyan/.conda_envs/py37
 pip install tensorflow==2.1.1
 pip install protobuf==3.20.* 
 pip install pip matplotlib
+pip install tqdm
 # install IPython kernel (inside of new env!) to make it visible
 conda install ipykernel -y
 
