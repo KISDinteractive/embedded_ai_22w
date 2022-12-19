@@ -1,3 +1,12 @@
+// Written/edited in 12/22 by github.com/jakobkilian for the github.com/KISDinteractive/embedded_ai_22w course.
+
+// This arduino code heavily inspired by a two-part video tutorial by Shawn Hymel
+// - part 1: https://www.youtube.com/watch?v=BzzqYNYOcWc
+// - part 2 https://www.youtube.com/watch?v=dU01M61RW8s
+// This, however, is based on an example from arguably the most important book in TinyML: 
+// https://www.oreilly.com/library/view/tinyml/9781492052036/)
+
+
 // ----- INCLUDES ------
 //Include libraries
 #include <EloquentTinyML.h>
