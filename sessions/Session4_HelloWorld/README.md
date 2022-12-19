@@ -98,11 +98,11 @@ The **EloquentTinyML** libary on the other hand has some major downsides:
 
 - developed by one maintainer; not very up to date
 - therefore onyl runs with TensorFlow 2.1.1 and therefore Python 3.7. This is the reason why we have to set up so many things on the virtual machine
-- There is one error on Windows Machines and Arduino 2.x.x that I couldn't solve so far (as of 19.12.22)
+- There is one error on Windows Machines and Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however solves the issue.**
 
 On the other hand however, there are som easy examples on the project website and on Github that need a lot lees lines of code and a lot less knowledge to be uploaded...
 
-### Deprecated Offical TensorFlowLite Library 
+### Deprecated Offical TensorFlowLite Library
 
 There has been an offical Arduino library to use tflite models on Arduino, which has been [removed from the official library manager two months ago](https://github.com/arduino/library-registry/pull/1748). You can still download and use the lib from [TensorFlow's Github](https://github.com/tensorflow/tflite-micro-arduino-examples#github) but this only supports **some boards, excluding ESP32 boards**. 
 
