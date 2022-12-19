@@ -32,10 +32,15 @@ In overview the steps are:
 ### 1. Create Data to be Used as Training Data
 
 1. Generate 1000 X-Values (1000 numbers between 0 and 2xPi)
+
 ![random_numbers](img/random_numbers.png)
+
 2. Generate the corresponding Y-Values (calculate sine of every X-Value)
+
 ![splitted_data](img/dataset.png)
+
 3. Split this data into 60% training (blue), 20% balidation (yellow) and 20% testing (red)
+
 ![splitted_data](img/splitted_data.png)
 
 ### 2. Prepare the Actual Model
@@ -54,11 +59,13 @@ Using the Keras `model.fit` function with following parameters:
 ### 4. Plot and Test Model
 
 We then plotted the progress of the deep learning process and discussed it.
+
 ![training_loss](img/training_loss.png)
 
 This (in very simple terms) shows how close the predctions of the model are to the actual calculated (and therefore correct/targeted) sine values are. On the x-axis you the the epochs and you clearly see, that there is a lot of progress in the beginning, a bit between 10 and 250 epochs and no real progress after 250 epochs. We could probably train this data set with only 250 epochs. *More about that in the next session.*
 
 And finally ran the model inside of Jupyter to see if it works:
+
 ![run_model](img/run_model.png)
 
 We expect the red dots to represent a sine wave (our target), while in blue we also show the corresponding (in our case 200) calculated values with the noise added. This is a small data set and therefore some deviations are normal/expected. 
