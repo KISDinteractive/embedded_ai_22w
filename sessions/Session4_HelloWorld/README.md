@@ -102,17 +102,17 @@ Again you will find some comments in the Arduino file, we had some deeper analys
 
 ### EloquentTinyML
 
-Some word about the "EloquentTinyML" Arduino library that we use:
+Some words about the "EloquentTinyML" Arduino library that we use:
 
-This is the most simple way that I found to be used with ESP32s (and therefore M5Sticks) and TensorFlow Models. Alternatively you could use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment by the "Espressif", the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
+This is the most simple way that I found to run TensorFlow models on ESP32 MCUs (and therefore e.g. M5Sticks). Alternatively you could use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment by "Espressif" the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
 
 The **EloquentTinyML** libary on the other hand has some major downsides: 
 
 - developed by one maintainer; not very up to date
-- therefore onyl runs with TensorFlow 2.1.1 and therefore Python 3.7. This is the reason why we have to set up so many things on the virtual machine
-- There is one error on Windows Machines and Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however solves the issue.**
+- therefore only runs with TensorFlow 2.1.1 and Python 3.7. This is the reason why we have to set up so many things on the virtual machine
+- There is an error on Windows Machines running Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however is a workaround.**
 
-On the other hand however, there are som easy examples on the project website and on Github that need a lot lees lines of code and a lot less knowledge to be uploaded...
+On the other hand however, there are some easy examples on the project website and on Github that need a lot less lines of code and a lot less knowledge to be flashed on a MCU...
 
 ### Deprecated Offical TensorFlowLite Library
 
