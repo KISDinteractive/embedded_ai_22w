@@ -31,9 +31,17 @@ In overview the steps are:
 
 ### 1. Create Data to be Used as Training Data
 
-1. Generate 1000 X-Values (1000 numbers between 0 and 2xPi)![random_numbers](img/random_numbers.png)
-2. Generate the corresponding Y-Values (calculate sine of every X-Value)![splitted_data](img/dataset.png)
-3. Split this data into 60% training (blue), 20% balidation (yellow) and 20% testing (red)![splitted_data](img/splitted_data.png)
+1. Generate 1000 X-Values (1000 numbers between 0 and 2xPi)
+
+![random_numbers](img/random_numbers.png)
+
+2. Generate the corresponding Y-Values (calculate sine of every X-Value)
+
+![splitted_data](img/dataset.png)
+
+3. Split this data into 60% training (blue), 20% balidation (yellow) and 20% testing (red)
+
+![splitted_data](img/splitted_data.png)
 
 ### 2. Prepare the Actual Model
 
@@ -50,11 +58,15 @@ Using the Keras `model.fit` function with following parameters:
 
 ### 4. Plot and Test Model
 
-We then plotted the progress of the deep learning process and discussed it.![training_loss](img/training_loss.png)
+We then plotted the progress of the deep learning process and discussed it.
+
+![training_loss](img/training_loss.png)
 
 This (in very simple terms) shows how close the predctions of the model are to the actual calculated (and therefore correct/targeted) sine values are. On the x-axis you the the epochs and you clearly see, that there is a lot of progress in the beginning, a bit between 10 and 250 epochs and no real progress after 250 epochs. We could probably train this data set with only 250 epochs. *More about that in the next session.*
 
-And finally ran the model inside of Jupyter to see if it works:![run_model](img/run_model.png)
+And finally ran the model inside of Jupyter to see if it works:
+
+![run_model](img/run_model.png)
 
 We expect the red dots to represent a sine wave (our target), while in blue we also show the corresponding (in our case 200) calculated values with the noise added. This is a small data set and therefore some deviations are normal/expected. 
 **This looks pretty good, so let's move on to the next step.** If the red line here was not ok, we would have to adjust the parameters of the training or create a larger data set...
@@ -90,17 +102,17 @@ Again you will find some comments in the Arduino file, we had some deeper analys
 
 ### EloquentTinyML
 
-Some word about the "EloquentTinyML" Arduino library that we use:
+Some words about the "EloquentTinyML" Arduino library that we use:
 
-This is the most simple way that I found to be used with ESP32s (and therefore M5Sticks) and TensorFlow Models. Alternatively you could use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment by the "Espressif", the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
+This is the most simple way that I found to run TensorFlow models on ESP32 MCUs (and therefore e.g. M5Sticks). Alternatively you could use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment by "Espressif" the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
 
 The **EloquentTinyML** libary on the other hand has some major downsides: 
 
 - developed by one maintainer; not very up to date
-- therefore onyl runs with TensorFlow 2.1.1 and therefore Python 3.7. This is the reason why we have to set up so many things on the virtual machine
-- There is one error on Windows Machines and Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however solves the issue.**
+- therefore only runs with TensorFlow 2.1.1 and Python 3.7. This is the reason why we have to set up so many things on the virtual machine
+- There is an error on Windows Machines running Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however is a workaround.**
 
-On the other hand however, there are som easy examples on the project website and on Github that need a lot lees lines of code and a lot less knowledge to be uploaded...
+On the other hand however, there are some easy examples on the project website and on Github that need a lot less lines of code and a lot less knowledge to be flashed on a MCU...
 
 ### Deprecated Offical TensorFlowLite Library
 
