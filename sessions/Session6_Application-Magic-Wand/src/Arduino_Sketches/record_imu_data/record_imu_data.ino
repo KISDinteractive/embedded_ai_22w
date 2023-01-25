@@ -1,9 +1,29 @@
+/*
+  Author: https://github.com/jakobkilian
+  Date: 25-01-2023
+
+  Content:
+  This Arduino sketch is part of the Interactive Systems course at KISD in WS 22/23 (https://github.com/KISDinteractive/embedded_ai_22w)
+  It is mainly based on a Github repo by "billiyz" (https://github.com/billiyz/tinyml-on-the-edge)
+  but  has been optimized/ported to be used on an M5StickC-Plus (ESP32) MCU programmed with the Arduino IDE
+  and the EloquentTinyML Library for Arduino by Simone Salerno (https://eloquentarduino.com/eloquent-tinyml/).
+
+  Usage:
+  1. use THIS record_imu_data.ino sketch to record data
+  2. use TFGyroData.ipynb to train a tflite model and export the model.h file
+  3. use t he magic_wand_presenter sketch (including the just created model.h file) to run the inference on the M5Stick
+*/
+
+
 // _____ LIBRARIES _____
 #include <M5StickCPlus.h>
 
 // _____ SETTINGS _____
-const float accelerationThreshold = 3.5;  // threshold of significant in G's
-const int numSamples = 256;
+const float accelerationThreshold = 3;  // threshold of significant in G's
+const int numSamples = 80;
+const int msBetweenSamples = 5;         // time between each of the samples
+const int msAfterRecord = 1500;     // time to wait after inference is finished and new inference can start
+
 
 // _____ STORAGE FOR DATA _____
 float aX = 0.0F;
@@ -18,8 +38,7 @@ int samplesRead = numSamples;
 // _____ SETUP _____
 void setup() {
   M5.begin();
-  M5.Lcd.setRotation(3);
-  M5.Lcd.setTextSize(3);
+  M5.Lcd.setTextSize(2);
   M5.Lcd.setTextColor(WHITE);
 
   M5.Imu.Init(); // start IMU
@@ -32,11 +51,11 @@ void setup() {
 // _____ LOOP _____
 void loop() {
   //Display "READY" Mode
-  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.fillScreen(TFT_DARKGREEN);
   M5.Lcd.setCursor(10, 10);
   M5.Lcd.printf("READY");
   M5.Lcd.setCursor(10, 100);
-  M5.Lcd.print(counter);
+  M5.Lcd.print("No. " + String(counter));
 
   // wait for significant motion
   while (samplesRead == numSamples) {
@@ -50,12 +69,12 @@ void loop() {
     // check if acc sum is above the threshold
     if (aSum >= accelerationThreshold) {
       samplesRead = 0;    // reset the sample read count to trigger recording
-      break;              // break while loop (go on with next task in "void loop")      
+      break;              // break while loop (go on with next task in "void loop")
     }
   }
 
   //Display "Recording" Mode
-  M5.Lcd.fillScreen(GREEN);
+  M5.Lcd.fillScreen(ORANGE);
   M5.Lcd.setCursor(10, 10);
   M5.Lcd.printf("Recording");
 
@@ -64,8 +83,8 @@ void loop() {
   long beginTime = millis();
   while (samplesRead < numSamples) {
     long lastTime;
-    // only read data every 3ms to match the frequency of the interference
-    if (millis() - lastTime >= 3) {
+    // only read data every msBetweenSamples to match the frequency of the interference
+    if (millis() - lastTime >= msBetweenSamples) {
       lastTime = millis();
 
       // read the acceleration and gyroscope data
@@ -75,11 +94,16 @@ void loop() {
 
       // print the data in CSV format to the Serial bus
       // use normalized data (between 0 and 1)
-      Serial.print((aX + 8.0) / 16.0, 2 + ',');
-      Serial.print((aY + 8.0) / 16.0, 2 + ',');
-      Serial.print((aZ + 8.0) / 16.0, 2 + ',');
-      Serial.print((gX + 2000.0) / 4000.0, 2 + ',');
-      Serial.print((gY + 2000.0) / 4000.0, 2 + ',');
+      Serial.print((aX + 8.0) / 16.0, 2);
+      Serial.print(',');
+      Serial.print((aY + 8.0) / 16.0, 2);
+      Serial.print(',');
+      Serial.print((aZ + 8.0) / 16.0, 2);
+      Serial.print(',');
+      Serial.print((gX + 2000.0) / 4000.0, 2);
+      Serial.print(',');
+      Serial.print((gY + 2000.0) / 4000.0, 2);
+      Serial.print(',');
       Serial.print((gZ + 2000.0) / 4000.0, 2);
       Serial.println();
 
@@ -96,7 +120,7 @@ void loop() {
   M5.Lcd.fillScreen(RED);
   M5.Lcd.setCursor(10, 10);
   M5.Lcd.printf("Wait!");
-  delay(1000);
+  delay(msAfterRecord);
 
   // increment the counter that gets displayed in the "READY" screen
   counter++;
