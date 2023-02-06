@@ -4,30 +4,30 @@
 
 # 4 Training our first Model from Scratch
 
-Chapter 4 spanned two actual meetings (12 & 19.12). We first set up a virtual machine on a server to run the training, in a second step went through the training process and the corresponding Python commands and last but not least loaded the code onto a M5StickC-Plus microcontroller.
+Chapter 4 spanned two actual meetings (12 & 19.12). First we set up a virtual machine on a server to run the training, then we went through the training process and the corresponding Python commands, and finally we loaded the code onto a M5StickC-Plus microcontroller.
 
-**The content and code of this chapter are heavily inspired by a two-part video tutorial by Shawn Hymel** ([Jupyter Notebook file](https://gist.github.com/ShawnHymel/79237fe6aee5a3653c497d879f746c0c), [part 1](https://www.youtube.com/watch?v=BzzqYNYOcWc) & [part 2](https://www.youtube.com/watch?v=dU01M61RW8s)), which itself is based on a notebook file (now available [here](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/examples/hello_world/create_sine_model.ipynb)) from arguably the [most important book in TinyML](https://www.oreilly.com/library/view/tinyml/9781492052036/) by [Pete Warden](https://github.com/petewarden).
+**The content and code of this chapter are heavily inspired by a two-part video tutorial by Shawn Hymel** ([Jupyter Notebook file](https://gist.github.com/ShawnHymel/79237fe6aee5a3653c497d879f746c0c), [part 1](https://www.youtube.com/watch?v=BzzqYNYOcWc) & [part 2](https://www.youtube.com/watch?v=dU01M61RW8s)), which in turn is based on a notebook file (now available [here](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/examples/hello_world/create_sine_model.ipynb)) from arguably the [most important book in TinyML](https://www.oreilly.com/library/view/tinyml/9781492052036/) by [Pete Warden](https://github.com/petewarden).
 
-The main difference between his tutorial and this chapter is the usage of the "EloquentTinyML" Arduino library and the [M5StickC-Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit) for running the model, while Shawn used the "Arduino Nano 33 BLE Sense" board which is currently not available.
+The main difference between his tutorial and this chapter is the use of the "EloquentTinyML" Arduino library and the [M5StickC-Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit) to run the model, while Shawn used the "Arduino Nano 33 BLE Sense" board which is currently not available.
 
 ## 4.1 Setting up Our "Hello World" Example (12.12)
 
-We began to set up the system in wich we want to train a model that predicts a sine wave as a "Hello World" way to test if our setup is working.
-- For this we boot a virtual kitegg server (you already got credentials) with the option **"(kisd-auto-kernels)"**
-- Next we want this very Git repository (short: repo) available locally on our virtual machine (on the server). So we type `git clone https://github.com/KISDinteractive/embedded_ai_22w.git` in a "Terminal" window of the JupyterLabs instance and hit the enter key.
-- After a few seconds, the repo should now appear in the file system preview on the left-hand side as the directory "embedded_ai_w22".
-- We then type `embedded_ai_22w/chapters/ch4-HelloWorld/src/init-jupyter-kitegg.sh` in the terminal and hit enter. This runs some installations of dependencies that we need later on. *We discussed the script in more detail in the meeting.*
-- Last but not least we navigate to the same folder (chapters/ch4-HelloWorld/src/) by using the mouse in the file manager on the left of JupyterLabs and double click the ipynb file (a Jupyter Notebook) to open it. 
+We started by setting up the system in which we want to train a model that predicts a sine wave as a "Hello World" to test if our setup is working.
+- To do this we boot a virtual kitegg server (you already got credentials) with the option **"(kisd-auto-kernels)"**
+- Next, we want to get this git repository (repo for short) available locally on our virtual machine (on the server). So we type `git clone https://github.com/KISDinteractive/embedded_ai_22w.git` in a "terminal" window of the JupyterLabs instance and hit the enter key.
+- After a few seconds, the repo should now appear in the file system preview on the left-hand side as a directory called "embedded_ai_w22".
+- We then type `embedded_ai_22w/chapters/ch4-HelloWorld/src/init-jupyter-kitegg.sh` in the terminal and hit enter. This will install some dependencies we will need later. *We discussed the script in more detail in the meeting.*
+- Finally, we navigate to the same folder (chapters/ch4-HelloWorld/src/) by using the mouse in the file manager on the left of JupyterLabs and double click the ipynb file (a Jupyter Notebook) to open it. 
 - When prompted which kernel you want to use, select the kernel " ... py37". If you are not asked, click on the kernel name in the upper right corner and the kernel prompt will pop up.
-- Now **run the first two cells** of the Jupyter Notebook (recap: press Shift + Enter to do so) and check if the Python and Tensorflow version are as described in the comments.
+- Now **run the first two cells** of the Jupyter Notebook (remember: press Shift + Enter to do so) and check that the Python and Tensorflow versions are as described in the comments.
 
 ## 4.2 Training the Model
 
-To train the model you basically only have to run all cells in the Notebook one by one. There are some explanatory comments in the code, but during the session we went more into detail of the code lines. 
+To train the model you basically just have to run all the cells in the notebook one by one. There are some explanatory comments in the code, but during the session we went through the lines of code in more detail. 
 
-*Note: besides some verbal explanation we didn't get deeper into how Neural Networks and Deep Learning works, but just jumped in. There will be some context in the next session!*
+*Note: apart from some verbal explanations, we didn't go deeper into how neural networks and deep learning work, we just jumped in. There will be some context in the next session!*)
 
-In overview the steps are:
+In summary, the steps are:
 
 ### 1. Create Data to be Used as Training Data
 
@@ -45,16 +45,16 @@ In overview the steps are:
 
 ### 2. Prepare the Actual Model
 
-Create a 2-layer Model with 16 nodes in each layer using Keras and TensorFlow.
+Create a 2-layer model with 16 nodes in each layer using Keras and TensorFlow.
 
-### 3. Train Model
+### 3. Train the Model
 
-Using the Keras `model.fit` function with following parameters:
+Using the Keras `model.fit` function with the following parameters
 
-- batch_size: 20 (how many predictions to make before adapting the model)
-- epochs: 500 (how often you use the whole data set for training)
+- batch_size: 20 (how many predictions to make before fitting the model)
+- epochs: 500 (how often you use the whole dataset for training)
 
-*We shortly discussed the meaning of "layers", "nodes", "epochs" and "batches" but will intensify this during the next session.*
+*We have briefly discussed the meaning of "layers", "nodes", "epochs" and "batches", but will go into more detail in the next session.*
 
 ### 4. Plot and Test Model
 
@@ -62,18 +62,18 @@ We then plotted the progress of the deep learning process and discussed it.
 
 ![training_loss](img/training_loss.png)
 
-This (in very simple terms) shows how close the predctions of the model are to the actual calculated (and therefore correct/targeted) sine values are. On the x-axis you the the epochs and you clearly see, that there is a lot of progress in the beginning, a bit between 10 and 250 epochs and no real progress after 250 epochs. We could probably train this data set with only 250 epochs. *More about that in the next session.*
+This shows (in very simple terms) how close the predictions of the model are to the actual calculated (and therefore correct/targeted) sine values. On the x-axis are the epochs and you can clearly see that there is a lot of progress in the beginning, a little between 10 and 250 epochs and no real progress after 250 epochs. We could probably train this data set with just 250 epochs. *More on this in the next session.*
 
-And finally ran the model inside of Jupyter to see if it works:
+Finally, we ran the model in Jupyter to see if it worked:
 
 ![run_model](img/run_model.png)
 
-We expect the red dots to represent a sine wave (our target), while in blue we also show the corresponding (in our case 200) calculated values with the noise added. This is a small data set and therefore some deviations are normal/expected. 
-**This looks pretty good, so let's move on to the next step.** If the red line here was not ok, we would have to adjust the parameters of the training or create a larger data set...
+We expect the red dots to represent a sine wave (our target), while in blue we also show the corresponding (in our case 200) calculated values with the noise added. This is a small data set, so some variation is normal/expected. 
+**This looks pretty good, so let's move on to the next step.** If the red line here is not ok, we would need to adjust the training parameters or create a larger data set...
 
-### 5. Convert Model to TensorFlow Lite & make it a C-Array
+### 5. Convert the Model to TensorFlow Lite & Make it a C Array
 
-The last cells only convert our TensorFlow model into a ".h" file that is readable by the Arduino library and looks like this (just an excerpt):
+The last cells just convert our TensorFlow model into a .h file that can be read by the Arduino library and looks like this (just a snippet):
 
 ```c
 unsigned char sine_model[] = {
@@ -90,32 +90,32 @@ unsigned char sine_model[] = {
 ## 4.3 Uploading the Arduino Sketch with our Freshly Trained Model
 
 - We downloaded the newly created "sine_model.h" file from JupyteLabs and the [already prepared folder including the .ino file](chapters/ch4-HelloWorld/src/M5Stick-TF-SineWave) from this Github repo.
-- We replaced the "sine_model.h" **inside** of the int folder with the freshly trained and downloaded "sine_model.h" file and opened the .ino sketch with Arduino. 
-- In Arduino you need to install the **"EloquentTinyML by Simone Salerno"** and the **"M5StickC-Plus by M5Stack official"** library in the library manager. 
+- We replaced the "sine_model.h" **in** the int folder with the freshly trained and downloaded "sine_model.h" file and opened the .ino sketch with Arduino. 
+- In Arduino you need to install the **"EloquentTinyML by Simone Salerno"** and the **"M5StickC-Plus by M5Stack official"** libraries in the library manager. 
 - And for the **M5StickC-Plus Board** that we were using, we added `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json` to the "Additional Boards Manager URLs" in the Arduino Settings and then installed the **"M5Stack by M5Stack official"** boards in the boards manager.
 
-With those steps we should be able to compile and upload the sketch to the M5Stick connected vie USB to the computer and see a calculated and a predicted wave on the display.
+With these steps we should be able to compile the sketch, upload it to the M5Stick connected via USB to the computer and see a calculated and a predicted wave on the display.
 
 ![result_on_M5Stick](img/result_on_M5Stick.jpeg)
 
-Again you will find some comments in the Arduino file, we had some deeper analysis during the session.
+Again, you will find some comments in the Arduino file, we had some deeper analysis during the session.
 
 ### EloquentTinyML
 
-Some words about the "EloquentTinyML" Arduino library that we use:
+A few words about the EloquentTinyML Arduino library we used:
 
-This is the most simple way that I found to run TensorFlow models on ESP32 MCUs (and therefore e.g. M5Sticks). Alternatively you could use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment by "Espressif" the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
+This is the easiest way I have found to run TensorFlow models on ESP32 MCUs (and thus M5Sticks, for example). Alternatively, you can use the official ESP-IDF (Espressif IoT Development Framework) programming and flashing environment from "Espressif", the manufacturer of the chip. This can be done in any IDE (e.g. VSCode; documented in the official [instructions](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#)) or using platform.io (a [handy tutorial](https://www.survivingwithandroid.com/run-tensorflow-lite-esp32-platformio/)). I consider both being much more complex and error-prone for beginners.
 
-The **EloquentTinyML** libary on the other hand has some major downsides: 
+**The EloquentTinyML libary on the other hand has some major downsides:** 
 
-- developed by one maintainer; not very up to date
-- therefore only runs with TensorFlow 2.1.1 and Python 3.7. This is the reason why we have to set up so many things on the virtual machine
-- There is an error on Windows Machines running Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however is a workaround.**
+- developed by a single maintainer; not very up to date
+- only works with TensorFlow 2.1.1 and Python 3.7. This is the reason why we have to set up so many things on the virtual machine
+- There is a bug on Windows Machines running Arduino 2.x.x that I couldn't solve so far (as of 19.12.22). **Using Arduino version 1.8.x however is a workaround.**
 
-On the other hand however, there are some easy examples on the project website and on Github that need a lot less lines of code and a lot less knowledge to be flashed on a MCU...
+On the other hand, there are some simple examples on the project website and on Github that require much fewer lines of code and much less knowledge to flash on a MCU...
 
-### Deprecated Offical TensorFlowLite Library
+### Deprecated Official TensorFlowLite Library
 
-There has been an offical Arduino library to use tflite models on Arduino, which has been [removed from the official library manager two months ago](https://github.com/arduino/library-registry/pull/1748). You can still download and use the lib from [TensorFlow's Github](https://github.com/tensorflow/tflite-micro-arduino-examples#github) but this only supports **some boards, excluding ESP32 boards**. 
+There was an official Arduino library for using tflite models on Arduino, which was [removed from the official library manager two months ago](https://github.com/arduino/library-registry/pull/1748). You can still download and use the lib from [TensorFlow's Github](https://github.com/tensorflow/tflite-micro-arduino-examples#github), but it only supports **some boards, excluding ESP32 boards**. 
 
-This is really a mess, as many tutorials rely on this library and are now broken. Probably TinyML simply isn't in vogue at the moment, while LLMs and Image Diffusion are in hype. For now, it seems easiest to stick with the "EloquentTinyML" library and Arduino.
+This is a real mess as many tutorials rely on this library and are now broken. Probably TinyML just isn't in vogue at the moment, while LLMs and Image Diffusion are all the rage. For now, it seems easiest to stick with the EloquentTinyML library and Arduino.

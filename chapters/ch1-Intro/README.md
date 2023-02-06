@@ -6,44 +6,44 @@
 
 ## Who is in?
 
-We agreed on nine participants according to the course selection list.
+We have agreed on nine participants according to the course selection list.
 
-## Who am I (the lecturer)?
+## Who am I (the teacher)?
 
 - [Jakob Kilian](https://www.th-koeln.de/personen/jakob.kilian/) | he/his
-- Research Fellow in KITeGG / „AI and Design“ project since 02/2022
+- Research Fellow in KITeGG / "AI and Design" project since 02/2022
 - Living Objects Lab (F02) at KISD
 
 ## Formalities
 
-- Meeting Mondays from 10:00 – 12:00 
+- Meetings on Mondays from 10:00 – 12:00 
 - 15 min break at 11:00
 - 11 meetings (today, 14.11 – 30.01)
 
 ## Ground Rules
 
-- pls write a mail if you cannot attend
-- pls study material on GitHub when missing a session
-- pls be in time (soildarity) – we agreed on 5 mins "on-time"-tolerance
-- We want to achieve a space for **psychological safety**
-  - We treat each other nicely and with respect
-  - We have our various backgrounds in mind / We don‘t judge smn if they don‘t know sth
+- pls send a mail if you cannot come
+- pls study material on GitHub if you miss a session
+- pls be in time (solidarity) – we agreed on 5 mins "on-time"-tolerance
+- We want to achieve a space of **psychological safety**
+  - We treat each other with kindness and respect
+  - We consider our different backgrounds / we don't judge people if they don't know sth.
   - We help each other
   - We give constructive feedback
-- We try to speak English whenever non-native speakers could attend the conversation
-- We ask questions, if we don‘t understand something. Better early than late
+- We try to speak English whenever non-native speakers can join in the conversation
+- We ask questions when we don't understand something. Better early than late
 
 # 1.2 Course Content
 
-In a short introduction round we discussed the perticpant's expectations of the course and understanding of "AI". We noted some of the statements on the whiteboard for a later review.
+In a short introduction round we discussed the particpant's expectations of the course and understanding of "AI". We noted some of the statements on the whiteboard for a later review.
 
 ## What does "Artificial Intelligence" ("AI") mean?
 
-- No such "thing" as "THE AI"
+- No is no such "thing" as "THE AI"
 
 - Always a set of tools for solving specific tasks – but sometimes even with "superhuman" performance → **Narrow AIs**
 - We are not even close to "AI" with human level of "intelligence" (General AI / AGI):
-  - Generalization
+  - Generalisation
   - Transfer
   - Integration
 - Discourse should be about both current and future AI systems
@@ -52,21 +52,21 @@ In a short introduction round we discussed the perticpant's expectations of the 
 
 ## What Exactly is This Course About?
 
-We discussed the difference between **cloud** and its so-called **edge** where laptops, smartphones but also smaller devices like "Internet of Things" and various end devices are located.
+We discussed the difference between the **cloud** and its so-called **edge**, where laptops, smartphones but also smaller devices such as the "Internet of Things" and various end devices are located.
 
 ![cloud-edge](img/cloud-edge.jpg)
 
-This course will deal with implementing AI on the **edge** side, while many applications in the field of AI run on big servers in the **cloud**. Sometimes we might fake things and use the cloud anyway to test prototypes.
+This course is about implementing AI on the **edge** side, whereas many AI applications run on big servers in the **cloud**. Sometimes we may fake things and still use the cloud anyway to test prototypes.
 
 ### Some Terms we will use:
 
-- **Machine Learning / ML =** AI variant | Use of data to improve a machine‘s performance on tasks
+- **Machine Learning / ML =** AI variant | Use of data to improve a machine's performance on tasks
 
-- **Deep Learning / DL =** family of ML methods using artificial neural networks
+- **Deep Learning / DL =** Family of ML methods using artificial neural networks
 
 - **Edge AI =** not running on servers (the cloud)
 
-- **Embedded AI =** Ai that is running on »embedded« systems like microcontrollers
+- **Embedded AI =** AI that runs on »embedded« systems such as microcontrollers
 
 - **TinyML =** ML for tiny computers / microcontrollers
 
@@ -74,7 +74,7 @@ This course will deal with implementing AI on the **edge** side, while many appl
 
 ## What is a Microcontroller / MCU?
 
-Small computer on a single chip, which has some special characteristics:
+Small computer on a single chip that has some special characteristics:
 
 - small, cheap, easy to get
 
@@ -82,19 +82,18 @@ Small computer on a single chip, which has some special characteristics:
 
 - less computing resources
 
-- **interfaces to control:** 
+- **Interfaces to control:** 
+- peripherals
+  
+- electrical & electronic parts (e.g. Sensors)
+  
+- mechanical parts
 
-  - peripherals
+*Note: There are in-between / hybrid cases, that are actually computers but with some capabilities of MCUs such as e.g. the Raspberry Pi or the powerful NVIDIA Jetson Orin
 
-  - electric & electronic parts (e.g. Sensors)
-
-  - mechanics
-
-*Note: There are in-between / hybrid cases, that are actually computers but with some capabilites of MCUs like e.g. the Raspberry Pi or the powerful NVIDIA Jetson Orin
-
-# Example ML with a ESP32
+# Example ML with an ESP32
 
 We then showed how easy it actually is to train a network when using tools. This time we used ["Teachable Machine" from Google.](https://teachablemachine.withgoogle.com/train/image) 
 
 - [Link to the code file in the author's repository](https://github.com/fustyles/Arduino/blob/master/ESP32-CAM_Tensorflow.js/ESP32-CAM_teachablemachine/ESP32-CAM_teachablemachine.ino)
-- [Short tutorial by the author shwoing the functionality](https://www.youtube.com/watch?v=Sn7AwpGFXLw)
+- [Short tutorial by the author showing the functionality](https://www.youtube.com/watch?v=Sn7AwpGFXLw)
