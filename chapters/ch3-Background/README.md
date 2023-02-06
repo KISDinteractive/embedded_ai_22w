@@ -1,4 +1,4 @@
-# Session 3 | 05.12.2022 – Background
+# Chapter 3 | Background
 
 ***Disclaimer:*** *This page offers supporting material for an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. Visit the [landing page](https://github.com/KISDinteractive/fundamentals22w) of this course for more information.*
 
@@ -6,7 +6,7 @@
 
 Having some historical background on AI helps understanding current state of the art and how and why certain fields have developed in the way they did.
 
-# 3.1 A Short History of AI
+## 3.1 A Short History of AI
 
 The history of speculation about robots is long. Consider this quote by **Aristoteles in 300 B.C.:**
 
@@ -30,13 +30,13 @@ This is intended to give an overview of the subject and cannot reflect the entir
 
 
 
-## Turing Machine
+### Turing Machine
 
 - Theoretical concept of the modern computer by the mathematician Alan Turing.
 - Foundation of the research field of computer science. 
 - Also see ["Interactive Systems [Fundamentals]"](https://github.com/KISDinteractive/fundamentals22w) for details.
 
-## Turing Test
+### Turing Test
 
 - paper in 1950 
 - Alan Turing asked "can machines think?" 
@@ -49,7 +49,7 @@ This is intended to give an overview of the subject and cannot reflect the entir
 
 
 
-## Dartmouth Conference
+### Dartmouth Conference
 
 - in 1956: Dartmouth Conference (Dartmouth Summer Research Project on Artificial Intelligence)
 - Leading Computer Scientists, Mathematicians and Linguists met to conduct a **8 week research project** on **solving tasks with computers**.
@@ -61,7 +61,7 @@ This is intended to give an overview of the subject and cannot reflect the entir
 
 → beginning of the 1st Summer
 
-## 1st Summer
+### 1st Summer
 
 - Dreams of the "General Problem Solver" → throw in difficult, wicked problems in; get a solution out
 
@@ -73,15 +73,15 @@ This is intended to give an overview of the subject and cannot reflect the entir
 - Big expectations, but mid 1960s nothing of the promised was there.
 - **Funding was cancelled. AI Winter began**
 
-### Shakey
+#### Shakey
 
 See [video of "Shakey"](https://youtu.be/GmU7SimFkpU?t=105),  a mobile all-purpose robot that interacts (partially) autonomously with its environment.
 
-### Eliza
+#### Eliza
 
 See [video of "Eliza"](https://youtu.be/GmU7SimFkpU?t=105), a chatbot that was able to use natural language to communicate with human beings.
 
-## 2nd Summer
+### 2nd Summer
 
 - Again: **huge interests, funding, hype**
 
@@ -95,19 +95,19 @@ See [video of "Eliza"](https://youtu.be/GmU7SimFkpU?t=105), a chatbot that was a
 
 - Difference to 1st Summer: 1st mainly was about research, second about business
 
-### Expert Systems
+#### Expert Systems
 
 - knowledge of experts fed into databases
 - enter input -> get answer to complex topics
 - e.g. treatments in medicine, chatbots for travel booking
 
-## Deep Blue vs. Kasparov
+### Deep Blue vs. Kasparov
 
 For quite a long time it got quiet around the AI scene. In 1997 the big shock: a computer program wins a chess game against the world champion Garry Kasparov. A game that has been seen as a thing that computers can't do/win due to their lack of creativity.
 
 See [raw footage of Kasparov](https://www.youtube.com/watch?v=aNpv3LfCUa4) obviously having difficulty to believe that he just loses against an AI system.
 
-# 3.2 Install Dependencies
+## 3.2 Install Dependencies
 
 We then installed a few components and apps that we will work with over the following sessions:
 
@@ -125,7 +125,7 @@ We then installed a few components and apps that we will work with over the foll
       Publisher: Microsoft
       [VS Marketplace Link](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-## Check if Python is installed locally
+### Check if Python is installed locally
 
 - Open a command-line interface.
   - **Mac:** open App "Terminal"
@@ -133,7 +133,7 @@ We then installed a few components and apps that we will work with over the foll
 - Type `python --version` in the command line and hit the "Enter" key. 
 - In case you see `Python` and some Version number like `3.11.0` you know now tht python was successfully installed.
 
-## Access to Jupyter on the Server Cluster
+### Access to Jupyter on the Server Cluster
 
 For the time of the course the participants also got access (user name and password) to the server cluster of the research project on jupyter.kitegg.de.
 

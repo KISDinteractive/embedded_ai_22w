@@ -1,10 +1,10 @@
-# Session 2 | 28.11.2022 – Explore
+# Chapter 2 | Explore
 
 ***Disclaimer:*** *This page offers supporting material for an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. Visit the [landing page](https://github.com/KISDinteractive/fundamentals22w) of this course for more information.*
 
 # 2.1 Train Model in Predefined Setting
 
-In Session 2 we did some practical experiments with a ESP32-CAM board. These are the steps we went through, **which can only be reproduced with the physical board available and connected to the coputer via cable:**
+In Chapter 2 we did some practical experiments with a ESP32-CAM board. These are the steps we went through, **which can only be reproduced with the physical board available and connected to the coputer via cable:**
 
 ## Flash Code to ESP
 

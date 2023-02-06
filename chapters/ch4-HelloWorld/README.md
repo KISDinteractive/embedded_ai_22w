@@ -1,27 +1,27 @@
-# Session 4 | 12. &  19.12.2022 – Hello World
+# Chapter 4 | Hello World
 
 ***Disclaimer:*** *This page offers supporting material for an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. Visit the [landing page](https://github.com/KISDinteractive/fundamentals22w) of this course for more information.*
 
 # 4 Training our first Model from Scratch
 
-Session 4 spanned two actual meetings (12 & 19.12). We first set up a virtual machine on a server to run the training, in a second step went through the training process and the corresponding Python commands and last but not least loaded the code onto a M5StickC-Plus microcontroller.
+Chapter 4 spanned two actual meetings (12 & 19.12). We first set up a virtual machine on a server to run the training, in a second step went through the training process and the corresponding Python commands and last but not least loaded the code onto a M5StickC-Plus microcontroller.
 
-**The content and code of this session are heavily inspired by a two-part video tutorial by Shawn Hymel** ([Jupyter Notebook file](https://gist.github.com/ShawnHymel/79237fe6aee5a3653c497d879f746c0c), [part 1](https://www.youtube.com/watch?v=BzzqYNYOcWc) & [part 2](https://www.youtube.com/watch?v=dU01M61RW8s)), which itself is based on a notebook file (now available [here](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/examples/hello_world/create_sine_model.ipynb)) from arguably the [most important book in TinyML](https://www.oreilly.com/library/view/tinyml/9781492052036/) by [Pete Warden](https://github.com/petewarden).
+**The content and code of this chapter are heavily inspired by a two-part video tutorial by Shawn Hymel** ([Jupyter Notebook file](https://gist.github.com/ShawnHymel/79237fe6aee5a3653c497d879f746c0c), [part 1](https://www.youtube.com/watch?v=BzzqYNYOcWc) & [part 2](https://www.youtube.com/watch?v=dU01M61RW8s)), which itself is based on a notebook file (now available [here](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/examples/hello_world/create_sine_model.ipynb)) from arguably the [most important book in TinyML](https://www.oreilly.com/library/view/tinyml/9781492052036/) by [Pete Warden](https://github.com/petewarden).
 
-The main difference between his tutorial and this session is the usage of the "EloquentTinyML" Arduino library and the [M5StickC-Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit) for running the model, while Shawn used the "Arduino Nano 33 BLE Sense" board which is currently not available.
+The main difference between his tutorial and this chapter is the usage of the "EloquentTinyML" Arduino library and the [M5StickC-Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit) for running the model, while Shawn used the "Arduino Nano 33 BLE Sense" board which is currently not available.
 
-# 4.1 Setting up Our "Hello World" Example (12.12)
+## 4.1 Setting up Our "Hello World" Example (12.12)
 
 We began to set up the system in wich we want to train a model that predicts a sine wave as a "Hello World" way to test if our setup is working.
 - For this we boot a virtual kitegg server (you already got credentials) with the option **"(kisd-auto-kernels)"**
 - Next we want this very Git repository (short: repo) available locally on our virtual machine (on the server). So we type `git clone https://github.com/KISDinteractive/embedded_ai_22w.git` in a "Terminal" window of the JupyterLabs instance and hit the enter key.
 - After a few seconds, the repo should now appear in the file system preview on the left-hand side as the directory "embedded_ai_w22".
-- We then type `embedded_ai_22w/sessions/Session4_HelloWorld/src/init-jupyter-kitegg.sh` in the terminal and hit enter. This runs some installations of dependencies that we need later on. *We discussed the script in more detail in the meeting.*
-- Last but not least we navigate to the same folder (sessions/Session4_HelloWorld/src/) by using the mouse in the file manager on the left of JupyterLabs and double click the ipynb file (a Jupyter Notebook) to open it. 
+- We then type `embedded_ai_22w/chapters/ch4-HelloWorld/src/init-jupyter-kitegg.sh` in the terminal and hit enter. This runs some installations of dependencies that we need later on. *We discussed the script in more detail in the meeting.*
+- Last but not least we navigate to the same folder (chapters/ch4-HelloWorld/src/) by using the mouse in the file manager on the left of JupyterLabs and double click the ipynb file (a Jupyter Notebook) to open it. 
 - When prompted which kernel you want to use, select the kernel " ... py37". If you are not asked, click on the kernel name in the upper right corner and the kernel prompt will pop up.
 - Now **run the first two cells** of the Jupyter Notebook (recap: press Shift + Enter to do so) and check if the Python and Tensorflow version are as described in the comments.
 
-# 4.2 Training the Model
+## 4.2 Training the Model
 
 To train the model you basically only have to run all cells in the Notebook one by one. There are some explanatory comments in the code, but during the session we went more into detail of the code lines. 
 
@@ -87,9 +87,9 @@ unsigned char sine_model[] = {
   ...
 ```
 
-# 4.3 Uploading the Arduino Sketch with our Freshly Trained Model
+## 4.3 Uploading the Arduino Sketch with our Freshly Trained Model
 
-- We downloaded the newly created "sine_model.h" file from JupyteLabs and the [already prepared folder including the .ino file](sessions/Session4_HelloWorld/src/M5Stick-TF-SineWave) from this Github repo.
+- We downloaded the newly created "sine_model.h" file from JupyteLabs and the [already prepared folder including the .ino file](chapters/ch4-HelloWorld/src/M5Stick-TF-SineWave) from this Github repo.
 - We replaced the "sine_model.h" **inside** of the int folder with the freshly trained and downloaded "sine_model.h" file and opened the .ino sketch with Arduino. 
 - In Arduino you need to install the **"EloquentTinyML by Simone Salerno"** and the **"M5StickC-Plus by M5Stack official"** library in the library manager. 
 - And for the **M5StickC-Plus Board** that we were using, we added `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json` to the "Additional Boards Manager URLs" in the Arduino Settings and then installed the **"M5Stack by M5Stack official"** boards in the boards manager.

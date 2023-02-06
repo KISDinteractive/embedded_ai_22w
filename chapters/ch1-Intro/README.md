@@ -1,4 +1,4 @@
-# Session 1 | 14.11.2022 – Intro
+# Chapter 1 | Intro
 
 ***Disclaimer:*** *This page offers supporting material for an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. Visit the [landing page](https://github.com/KISDinteractive/fundamentals22w) of this course for more information.*
 
@@ -14,7 +14,7 @@ We agreed on nine participants according to the course selection list.
 - Research Fellow in KITeGG / „AI and Design“ project since 02/2022
 - Living Objects Lab (F02) at KISD
 
-## Formalities 
+## Formalities
 
 - Meeting Mondays from 10:00 – 12:00 
 - 15 min break at 11:00

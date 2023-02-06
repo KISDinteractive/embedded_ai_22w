@@ -2,7 +2,7 @@
 
 ![Close up of an integrated circuit on a pcb](img/Computer_chips_circuits_boards.jpg)
 
-***Disclaimer:*** *This repo documents an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. In the "sessions" section you can find supporting material to the four sessions for consolidation or rework in case of missed meetings. Please keep in mind that the transcript was not written for (scientific) completeness _and that reading without participation_ in the course is of limited value.*
+***Disclaimer:*** *This repo documents an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. In the "chapters" section you can find supporting material to the six chapters for consolidation or rework in case of missed meetings. Please keep in mind that the transcript was not written for (scientific) completeness _and that reading without participation_ in the course is of limited value only.*
 
 ## Intro
 
@@ -10,10 +10,12 @@ Welcome to the repository of the KISD Interactive Systems [Application] – Embe
 
 ## Sessions
 
-- 🖐 [**Session 1 – Intro**](/sessions/Session1_Intro/README.md)
-- 🔭 [**Session 2 – Explore**](/sessions/Session2_Explore/README.md)
-- 🔍 [**Session 3 – Background**](/sessions/Session3_Background/README.md)
-- 〰️ [**Session 4 – Hello World**](/sessions/Session4_HelloWorld/README.md)
+- 🖐 [**Chapter 1 – Intro**](/chapters/ch1-Intro/README.md)
+- 🔭 [**Chapter 2 – Explore**](/chapters/ch2-Explore/README.md)
+- 🔍 [**Chapter 3 – Background**](/chapters/ch3-Background/README.md)
+- 〰️ [**Chapter 4 – Hello World**](/chapters/ch4-HelloWorld/README.md)
+- 💡 [**Chapter 5 – DeepLearning**](/chapters/ch5-DeepLearning/README.md)
+- 🪄 [**Chapter 6 – Application: Magic Wand**](/chapters/ch6-ApplicationMagicWand/README.md)
 
 
 ## The Course
