@@ -4,39 +4,6 @@
 
 ![Close up of an integrated circuit on a pcb](img/Computer_chips_circuits_boards.jpg)
 
-***Disclaimer:*** *This repo documents an Interaction Design course held at [KISD](https://kisd.de) in the winter term 2022/23. In the "chapters" section you can find supporting material to the six chapters for consolidation or rework in case of missed meetings. Please keep in mind that the transcript was not written for (scientific) completeness _and that reading without participation_ in the course is of limited value only.*
+**This repo was moved to the GitLab instance of the joint project "KITEGG" in which it was developed.**
 
-## Intro
-
-Welcome to the repository of the KISD Interactive Systems [Application] – Embedding AI Into Living Objects course. 
-
-## Sessions
-
-- 🖐 [**Chapter 1 – Intro**](chapters/ch1-Intro/README.md)
-- 🔭 [**Chapter 2 – Explore**](chapters/ch2-Explore/README.md)
-- 🔍 [**Chapter 3 – Background**](chapters/ch3-Background/README.md)
-- 〰️ [**Chapter 4 – Hello World**](chapters/ch4-HelloWorld/README.md)
-- 💡 [**Chapter 5 – DeepLearning**](chapters/ch5-DeepLearning/README.md)
-- 🪄 [**Chapter 6 – Application: Magic Wand**](chapters/ch6-ApplicationMagicWand/README.md)
-
-
-## The Course
-
-This course takes place in the winter semester of 2022/23 at the [Köln International School of Design](https://kisd.de) in Cologne, Germany. The description reads:
-
-<details>
-<summary style="font-size:14px"><b>View Course Description</b></summary>
-<p><i>
-Code and algorithms are the materials from which essential aspects of our social, cultural and economic future are built. When designing these interactive systems and objects, a substantial understanding of the underlying technology (hardware) and the executed algorithm or program code (software) is essential. With the increase of such systems in everyday life, there is an increasing need to approach these topics in the context of design studies (especially in interaction/interface/product design) and to develop the ability to develop such prototypes.</i></p><p><i>
-With the new "Living Objects Lab", AI (Artificial Intelligence) is now being integrated into teaching and research at KISD: there, tools, infrastructure, (research) space and supervision are available to embed "intelligent" systems in physical objects. In this way, these are transferred from the virtual "cloud" into "material" and made "alive" through meaningful human-machine interfaces. </i></p><p><i>
-
-However, the information processing in previous AI systems was mostly outsourced to computationally powerful servers (in the "cloud"), while the object only functioned as an interface. Recently, information has also begun to be (pre)processed decentrally on the end device (e.g. a microcontroller). This process is called Edge AI/Computing, derived from the "edge" of the network / cloud. </i></p><p><i>
-
-In this course, we first deal with the term "AI" in general, look at conceptual basics of Edge AI and talk about its pros and cons. We exemplarily enable objects to react to changes in their environment in an autonomous and hopefully intelligent way by integrating AI on the edge level. We will then close with an outlook on further AI research and development fields. </i></p><p><i>
-
-Prerequisite for participation is the preceding "Interactive Systems [Fundamentals]" course or basic experience in programming (e.g. through an Arduino course in the Proto Lab). 
-</i></p></details>
-
-## Authors
-
-This repo is maintained by [Jakob Kilian](https://github.com/jakobkilian)
+Also note, that it only represented the documentation for a singular course held at [KISD](kisd.de) in winter term 2022/23. Please visit https://gitlab.rlp.net/kitegg/public/kisd/interactive-systems **to always find the latest repository!**
